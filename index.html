@@ -1,16 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta content="text/html; charset=utf-8"/>
-  <title>Sweetbot</title>
-<link href="styles/styles.css" rel="stylesheet" type="text/css">
+<link href="file:///Macintosh HD/Users/kimziegler/Documents/GitHub/sweetbot/styles/java-script.css" rel="stylesheet" type="text/css">
+<title>Eksempel</title>
+<meta charset="utf-8" />
+<!-- Loading jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- loading scroll to plugin-->
+<script src="file:///Macintosh HD/Users/kimziegler/Documents/GitHub/Java.intro/jquery.scrollTo.min.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		//bliver udført når dokumentet er læst ind!
+		console.log('jQuery er her ');
+		$('#knap').click(klik);
+		
+		//implementing scroll animation
+		$('nav a').click(function(){
+			$(window).scrollTo(this.hash, 1000);
+		});
+		});	
+	
+	//var trigger = document.getElementById('knap');
+	//trigger.addEventListener('click', klik);
+	
+	
+	//msg=message
+	
+	function klik() {
+		var msg = $('#resultat')
+		
+	if(!$('#tekstfelt').val()){
+		//alert('Please fill in your name!')
+	    msg.html('Please fill in your name').css('color', 'red');
+	   //document.getElementById("resultat").innerHTML = 'Please fill in your name'
+	   }else{
+		   var brugerensNavn = $('#tekstfelt').val();
+		  msg.html('Hej ' + brugerensNavn).css('color', 'blue');
+	   	//var brugerensNavn = document.getElementById("tekstfelt").value;
+		//document.getElementById("resultat").innerHTML = "Hej " + brugerensNavn;
+	   }
+	   
+	
+	}
+</script>
 </head>
 
 <body>
-<h1>Sweetbot</h1>
-<p>
-  Sweeet bot
-</p>
-
+<ul>
+ <li><a class="logo" href="#sweetbot"><img src="images/sweetbot.png" alt="sweetbot"></a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#products">Products</a></li>
+  <li><a class="active" href="#home">Home</a></li>
+</ul>
+<section id="home">
+  <h1>Content for ho's</h1>
+</section>
+<section id="contact">
+  <input type="text" id="tekstfelt" />
+  <input type="button" id="knap" value="Tryk her"/>
+  <div id="resultat"> Svaret kommer her... </div>
+</section>
 </body>
 </html>
