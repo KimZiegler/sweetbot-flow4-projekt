@@ -27,18 +27,23 @@ body {
 			background: #383333;
 		}
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
     overflow: hidden;
     background-color: #2A1000;
 	position: -webkit-sticky; 
-    position: sticky;
+    position: sticky;	
     top: 0;
+	float: right;
+	width: 100%;
 }
 
 li {
-    float: right;
+     display: inline-block;
+     text-align: center;
+     margin-left: 15px;
+	 display: inline-block;
+     text-align: center;
+     margin-left: 15px;
 }
 
 li a {
@@ -55,4 +60,8 @@ li a:hover:not(.active) {
 
 .active {
     background-color: #A4A4A4;
-	
+}
+.logo {
+	float: left;
+		
+}
